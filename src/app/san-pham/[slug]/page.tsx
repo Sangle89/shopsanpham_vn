@@ -5,7 +5,9 @@ import { extractProductSlug, formatMoney } from "@/utils/function";
 import { TProductItem } from "../../../../@types/common";
 import { Fragment } from "react";
 
-async function fetchData(slug: string): Promise<{ data: TProductItem }> {
+async function fetchData(
+  slug: string
+): Promise<{ data: TProductItem; breadcrumbs: any }> {
   try {
     const item_id = extractProductSlug(slug);
     console.log(item_id);
@@ -18,13 +20,13 @@ async function fetchData(slug: string): Promise<{ data: TProductItem }> {
 }
 
 export default async function ProductPage({ params }) {
-  const { data } = await fetchData((await params).slug);
+  const { data, breadcrumbs } = await fetchData((await params).slug);
   return (
     <div className="bg-gray-50">
       <div className="px-0 py-10 lg:py-10">
         <div className="mx-auto px-3 lg:px-10 max-w-screen-2xl">
           <div className="flex items-center pb-4">
-            <ProductBreadcrumb />
+            <ProductBreadcrumb data={breadcrumbs} />
           </div>
           <div className="w-full rounded-lg p-3 lg:p-12 bg-white">
             <div className="flex flex-col xl:flex-row">

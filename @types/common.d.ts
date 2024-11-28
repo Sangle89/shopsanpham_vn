@@ -13,4 +13,5 @@ export type TProductItem = {
 export type TCategoryItem = {
   id: number;
   display_name: string;
+  cat_id_fe: number;
 };
