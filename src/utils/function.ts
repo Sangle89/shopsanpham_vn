@@ -11,11 +11,15 @@ export function categoryUrl(title: string, cat_id: number) {
 }
 
 export function extractProductSlug(slug: string) {
-  const id = slug.split("-i").pop();
-  return id?.split(".").pop();
+  const id = slug.split("-i.").pop();
+  return id;
 }
 
 export function extractCategorySlug(slug: string) {
   const id = slug.split("-cat.").pop();
   return id?.split(".").pop();
+}
+
+export function productImage(image: string) {
+  return `https://down-vn.img.susercontent.com/file/${image}.webp`;
 }

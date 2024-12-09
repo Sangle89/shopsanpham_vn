@@ -2,10 +2,18 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { CgChevronRight } from "react-icons/cg";
 
-export default function ProductBreadcrumb({ data }) {
+type BreadcrumbProps = {
+  display_name: string;
+};
+
+export default function ProductBreadcrumb({
+  data,
+}: {
+  data: BreadcrumbProps[];
+}) {
   return (
-    <ol className="flex items-center w-full overflow-hidden font-serif">
-      <li className="text-sm pr-1 transition duration-200 ease-in cursor-pointer hover:text-emerald-500 font-semibold">
+    <ol className="flex items-center w-full overflow-hidden">
+      <li className="text-sm pr-1 transition duration-200 ease-in cursor-pointer hover:text-emerald-500">
         <Link href="/">Trang chủ</Link>
       </li>
       <li className="text-sm mt-[1px]"></li>

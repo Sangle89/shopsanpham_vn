@@ -1,8 +1,28 @@
 import ProductBreadcrumb from "@/components/productDetail/ProductBreadcrumb";
 import { API_URL } from "@/configs/constant";
 import { extractCategorySlug } from "@/utils/function";
-import { TProductItem } from "../../../../@types/common";
+import { TCategoryItem, TProductItem } from "../../../../@types/common";
 import ProductItem from "@/components/product/ProductItem";
+import SidebarCategory from "@/components/sidebarCategory";
+import { Metadata } from "next";
+
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const cat_id = extractCategorySlug((await params).slug);
+  const res = await fetch(API_URL + "/product/search/seo?cat_id=" + cat_id);
+  const product = await res.json();
+
+  return {
+    title: product.metaData.title,
+    // openGraph: {
+    //   images: ['/some-specific-page-image.jpg', ...previousImages],
+    // },
+  };
+}
 
 async function fetchData(slug: string): Promise<{
   data: { data: TProductItem[]; total: number };
@@ -14,11 +34,22 @@ async function fetchData(slug: string): Promise<{
   return data;
 }
 
-export default async function CategoryPage({ params }) {
+async function fetchCategory(): Promise<{ data: TCategoryItem[] }> {
+  const res = await fetch(API_URL + "/category");
+  const data = await res.json();
+  return data;
+}
+
+export default async function CategoryPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const {
     data: { data, total },
     breadcrumbs,
   } = await fetchData((await params).slug);
+  const { data: categories } = await fetchCategory();
   return (
     <div className="bg-gray-50">
       <div className="px-0 py-10 lg:py-10">
@@ -28,9 +59,11 @@ export default async function CategoryPage({ params }) {
           </div>
           <div className="w-full">
             <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row">
-              <div className="w-full xl:w-3/12 lg:w-3/12 md:w-3/12">left</div>
+              <div className="w-full xl:w-3/12 lg:w-3/12 md:w-3/12">
+                <SidebarCategory categories={categories} />
+              </div>
               <div className="w-9/12 xl:pl-6 md:pl-6 md:w-9/12 mob-w-full">
-                <div className="flex justify-between my-3 bg-orange-100 border border-gray-100 rounded p-3">
+                <div className="flex justify-between mb-3 bg-orange-100 border border-gray-100 rounded p-3">
                   <h6 className="text-sm font-serif">
                     Có <span className="font-bold">{total}</span> sản phẩm
                   </h6>

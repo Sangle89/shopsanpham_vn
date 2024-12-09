@@ -349,11 +349,11 @@ const Footer = () => {
                     </div>
                   </a>
                   <p className="leading-7 font-sans text-sm text-gray-600 mt-3">
-                    987 Andre Plain Suite High Street 838, Lake Hestertown, USA
+                    Address
                     <br />
-                    <span> Tel : 02.356.1666</span>
+                    <span> Hotline : </span>
                     <br />
-                    <span> Email : ccruidk@test.com</span>
+                    <span> Email : support@shopsanpham.vn</span>
                   </p>
                 </div>
               </div>
@@ -454,34 +454,8 @@ const Footer = () => {
                       </ul>
                     </div>
                   </div>
-                  <div className="col-span-1 text-center hidden lg:block md:block">
-                    <div>
-                      <p className="text-base leading-7 font-medium block">
-                        Call Us Today!
-                      </p>
-                      <h5 className="text-2xl font-bold text-emerald-500 leading-7">
-                        +6599887766
-                      </h5>
-                    </div>
-                  </div>
-                  <div className="col-span-1 hidden lg:block md:block">
-                    <ul className="lg:text-right">
-                      <li className="px-1 mb-2 md:mb-0 transition hover:opacity-80 inline-flex">
-                        <img
-                          alt="payment method"
-                          loading="lazy"
-                          width={274}
-                          height={85}
-                          decoding="async"
-                          data-nimg={1}
-                          className="w-full"
-                          srcSet="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fahossain%2Fimage%2Fupload%2Fv1697688607%2Fsettings%2Fpayment-logo_qhslgz.webp&w=384&q=75 1x, /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fahossain%2Fimage%2Fupload%2Fv1697688607%2Fsettings%2Fpayment-logo_qhslgz.webp&w=640&q=75 2x"
-                          src="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fahossain%2Fimage%2Fupload%2Fv1697688607%2Fsettings%2Fpayment-logo_qhslgz.webp&w=640&q=75"
-                          style={{ color: "transparent" }}
-                        />
-                      </li>
-                    </ul>
-                  </div>
+                  <div className="col-span-1 text-center hidden lg:block md:block"></div>
+                  <div className="col-span-1 hidden lg:block md:block"></div>
                 </div>
               </div>
             </div>
@@ -492,9 +466,9 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-emerald-500"
-                  href="https://themeforest.net/user/htmllover"
+                  href="https://shopsanpham.vn"
                 >
-                  HtmlLover
+                  shopsanpham.vn
                 </a>
                 , All rights reserved.
               </p>

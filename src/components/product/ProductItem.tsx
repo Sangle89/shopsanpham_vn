@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CiStar } from "react-icons/ci";
-import { formatMoney, productUrl } from "@/utils/function";
+import { formatMoney, productImage, productUrl } from "@/utils/function";
 import { TProductItem } from "../../../@types/common";
 import Link from "next/link";
 
@@ -29,7 +29,7 @@ const ProductItem = ({
             <Image
               width={300}
               height={200}
-              src={`https://down-vn.img.susercontent.com/file/${image}.webp`}
+              src={productImage(image)}
               alt={title}
               className="object-contain transition duration-150 ease-linear transform group-hover:scale-105 p-2"
             />
