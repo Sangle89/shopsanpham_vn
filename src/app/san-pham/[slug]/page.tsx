@@ -4,12 +4,16 @@ import { API_URL } from "@/configs/constant";
 import { extractProductSlug, formatMoney } from "@/utils/function";
 import { TProductItem, TShop } from "../../../../@types/common";
 import { Fragment } from "react";
-import { Metadata, NextPageContext } from "next";
+import StarRatings from "react-star-ratings";
+
 import SocialSharing from "@/components/SocialSharing";
 import ShopInfo from "@/components/shopInfo";
 import ProductRelated from "@/components/productRelated";
 import ProductContent from "@/components/productDetail/ProductContent";
 import IButton from "@/components/UI/Button";
+import ProductRating from "@/components/productDetail/ProductRating";
+import { Metadata } from "next";
+import ProductModel from "@/components/productDetail/ProductModel";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -78,11 +82,12 @@ export default async function ProductPage({
               <div className="w-full">
                 <div className="flex flex-col">
                   <div className="mob-w-full">
-                    <div className="mb-6">
+                    <div className="mb-3">
                       <h1 className="leading-7 text-lg md:text-xl lg:text-2xl mb-1 font-semibold  text-gray-800">
                         {product.title}
                       </h1>
                     </div>
+                    <ProductRating product={product} />
                     <div className=" product-price font-bold mb-4 bg-gray-200 p-3">
                       <span className="inline-block text-2xl">
                         {formatMoney(product.price)}
@@ -119,10 +124,7 @@ export default async function ProductPage({
                         </div>
                       </div>
                     </div>
-                    <div className="flex mb-4 text-sm">
-                      <div className="flex-1">Màu sắc</div>
-                      <div></div>
-                    </div>
+                    <ProductModel models={product.models} />
                     <div className="flex items-center mt-4 mb-4">
                       <div className="flex items-center justify-between space-s-3 sm:space-s-4 w-full">
                         <IButton label="Mua ngay" />

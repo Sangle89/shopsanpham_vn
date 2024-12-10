@@ -1,3 +1,7 @@
+export type TProductModel = {
+  name: string;
+  price: number;
+};
 export type TProductItem = {
   id: number;
   title: string;
@@ -6,10 +10,13 @@ export type TProductItem = {
   image: string;
   stock: number;
   rating_star: number;
+  total_rating_count: number;
+  global_sold: number;
   raw_discount: number;
   item_id: number;
   shop_id: number;
   description: string;
+  models: TProductModel[];
 };
 export type TCategoryItem = {
   id: number;

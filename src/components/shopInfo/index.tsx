@@ -16,8 +16,12 @@ export default function ShopInfo({ shop }: { shop: TShop }) {
         </div>
         <div className="flex flex-col ml-4">
           <div className="font-bold">{shop?.name}</div>
-          <div className="text-sm text-gray-500 mt-0">Online 9 phút trước</div>
-          <a href="py-2 px-3">Xem shop</a>
+          <div className="text-sm text-gray-500 mt-0 mb-2">
+            Online 9 phút trước
+          </div>
+          <a className="py-2 px-3" href="#">
+            Xem shop
+          </a>
         </div>
         <div className="ml-4 flex gap-4">
           <div>
