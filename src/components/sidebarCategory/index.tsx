@@ -19,7 +19,7 @@ export default function SidebarCategory({
             <CgChevronRight />
             <a
               className="inline-flex items-center justify-between ml-2 text-sm font-medium w-full hover:text-emerald-600"
-              href={categoryUrl(item.display_name, item.cat_id_fe)}
+              href={categoryUrl(item.slug, item.cat_id_fe)}
             >
               {item.display_name}
             </a>

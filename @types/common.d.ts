@@ -24,6 +24,7 @@ export type TCategoryItem = {
   display_name: string;
   cat_id_fe: number;
   parent_id: number;
+  slug: string;
 };
 export type TShop = {
   shop_id: number;
