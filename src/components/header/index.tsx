@@ -61,7 +61,7 @@ const Header = () => {
               className="mr-3 lg:mr-12 xl:mr-12 hidden md:hidden lg:block"
               href="/"
             >
-              <div className="relative w-32 h-10">
+              <div className="relative w-40 h-20 flex items-center">
                 <img
                   alt="logo"
                   fetchPriority="high"
@@ -70,7 +70,7 @@ const Header = () => {
                   decoding="async"
                   data-nimg={1}
                   className="w-full h-auto"
-                  src="https://res.cloudinary.com/ahossain/image/upload/v1697687802/settings/logo-light_hls14v.svg"
+                  src="/logo-shopsanpham.png"
                   style={{ color: "transparent" }}
                 />
               </div>

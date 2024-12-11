@@ -7,6 +7,24 @@ import { API_URL } from "@/configs/constant";
 import Image from "next/image";
 import { Fragment } from "react";
 import { TCategoryItem, TProductItem } from "../../@types/common";
+import { Metadata } from "next";
+
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const res = await fetch(API_URL + "/home/seo");
+  const product = await res.json();
+
+  return {
+    title: product.metaData.title,
+    // openGraph: {
+    //   images: ['/some-specific-page-image.jpg', ...previousImages],
+    // },
+  };
+}
 
 async function fetchData(): Promise<{
   products: TProductItem[];
