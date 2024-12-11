@@ -7,6 +7,7 @@ import Link from "next/link";
 /* eslint-disable @next/next/no-img-element */
 const ProductItem = ({
   title,
+  slug,
   price,
   image,
   stock,
@@ -16,7 +17,7 @@ const ProductItem = ({
   shop_id,
 }: TProductItem) => {
   return (
-    <Link href={productUrl(title, item_id, shop_id)}>
+    <Link href={productUrl(slug, item_id, shop_id)}>
       <div className="group box-border overflow-hidden flex rounded-md shadow-sm pe-0 flex-col items-center bg-white relative">
         <div className="w-full flex justify-between">
           <span className="bg-gray-100 absolute z-10 text-green-500 rounded-full text-xs px-2 py-0 font-medium">

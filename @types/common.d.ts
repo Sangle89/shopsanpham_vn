@@ -5,6 +5,7 @@ export type TProductModel = {
 export type TProductItem = {
   id: number;
   title: string;
+  slug: string;
   price: number;
   price_before_discount: number;
   image: string;
