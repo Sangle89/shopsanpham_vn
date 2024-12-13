@@ -96,9 +96,13 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-screen-2xl px-4 sm:px-10 mb-4 mt-4">
-        <div dangerouslySetInnerHTML={{ __html: seo?.bottom_content }} />
-      </div>
+      {seo.bottom_content !== "" ? (
+        <div className="mx-auto max-w-screen-2xl px-4 sm:px-10 mb-4 mt-4">
+          <div
+            dangerouslySetInnerHTML={{ __html: seo?.bottom_content || "" }}
+          />
+        </div>
+      ) : null}
     </Fragment>
   );
 }
