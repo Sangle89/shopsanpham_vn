@@ -36,7 +36,18 @@ async function fetchData(): Promise<{
     const data = await res.json();
     return data;
   } catch (err) {
-    return { products: [], categories: [] };
+    return {
+      products: [],
+      categories: [],
+      seo: {
+        meta_title: "",
+        meta_keywords: "",
+        meta_description: "",
+        og_image: "",
+        top_content: "",
+        bottom_content: "",
+      },
+    };
   }
 }
 
