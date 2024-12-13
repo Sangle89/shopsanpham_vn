@@ -36,3 +36,11 @@ export type TShop = {
   };
   name: string;
 };
+export type TSeo = {
+  meta_title: string;
+  meta_keywords: string;
+  meta_description: string;
+  og_image: string;
+  top_content: string;
+  bottom_content: string;
+};

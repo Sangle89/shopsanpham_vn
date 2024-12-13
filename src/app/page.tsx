@@ -6,7 +6,7 @@ import ProductItem from "@/components/product/ProductItem";
 import { API_URL } from "@/configs/constant";
 import Image from "next/image";
 import { Fragment } from "react";
-import { TCategoryItem, TProductItem } from "../../@types/common";
+import { TCategoryItem, TProductItem, TSeo } from "../../@types/common";
 import { Metadata } from "next";
 
 type Props = {
@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 async function fetchData(): Promise<{
   products: TProductItem[];
   categories: TCategoryItem[];
+  seo: TSeo;
 }> {
   try {
     const res = await fetch(API_URL + "/home");
@@ -40,13 +41,13 @@ async function fetchData(): Promise<{
 }
 
 export default async function Home() {
-  const { products, categories } = await fetchData();
+  const { products, categories, seo } = await fetchData();
 
   return (
     <Fragment>
       <div className="bg-gray-50">
         <div className="min-h-screen">
-          <div className="bg-gray-100 lg:py-16 py-10">
+          <div className="bg-gray-100 lg:py-12 py-8">
             <div className="mx-auto max-w-screen-2xl px-3 sm:px-10">
               <div className="mb-10 flex justify-center">
                 <div className="text-center w-full lg:w-2/5">
@@ -83,6 +84,9 @@ export default async function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="mx-auto max-w-screen-2xl px-4 sm:px-10 mb-4 mt-4">
+        <div dangerouslySetInnerHTML={{ __html: seo?.bottom_content }} />
       </div>
     </Fragment>
   );

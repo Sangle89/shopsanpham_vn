@@ -1,360 +1,41 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 import { Fragment } from "react";
-
-const Footer = () => {
+type FooterProps = {
+  footer_content: {
+    footer_column_1: string;
+    footer_column_2: string;
+    footer_column_3: string;
+  };
+};
+const Footer = ({ footer_content }: FooterProps) => {
   return (
     <Fragment>
-      <footer className="lg:hidden fixed z-30 bottom-0 bg-emerald-500 flex items-center justify-between w-full h-16 px-3 sm:px-10">
-        <button
-          aria-label="Bar"
-          className="flex items-center justify-center flex-shrink-0 h-auto relative focus:outline-none"
-        >
-          <span className="text-xl text-white">
-            <svg
-              stroke="currentColor"
-              fill="none"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-6 h-6 drop-shadow-xl"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line x1={17} y1={10} x2={3} y2={10} />
-              <line x1={21} y1={6} x2={3} y2={6} />
-              <line x1={21} y1={14} x2={3} y2={14} />
-              <line x1={17} y1={18} x2={3} y2={18} />
-            </svg>
-          </span>
-        </button>
-        <a
-          className="text-xl text-white"
-          rel="noreferrer"
-          aria-label="Home"
-          href="/"
-        >
-          <svg
-            stroke="currentColor"
-            fill="none"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="w-6 h-6 drop-shadow-xl"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-            <polyline points="9 22 9 12 15 12 15 22" />
-          </svg>
-        </a>
-        <button className="h-9 w-9 relative whitespace-nowrap inline-flex items-center justify-center text-white text-lg">
-          <span className="absolute z-10 top-0 right-0 inline-flex items-center justify-center p-1 h-5 w-5 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 bg-red-500 rounded-full">
-            1
-          </span>
-          <svg
-            stroke="currentColor"
-            fill="none"
-            strokeWidth={2}
-            viewBox="0 0 24 24"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="w-6 h-6 drop-shadow-xl"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx={9} cy={21} r={1} />
-            <circle cx={20} cy={21} r={1} />
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-          </svg>
-        </button>
-        <button
-          aria-label="User"
-          type="button"
-          className="text-xl text-white indicator justify-center"
-        >
-          <a href="/auth/login">
-            <svg
-              stroke="currentColor"
-              fill="none"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-6 h-6 drop-shadow-xl"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-              <circle cx={12} cy={7} r={4} />
-            </svg>
-          </a>
-        </button>
-      </footer>
-      <div className="w-full">
-        <div className="hidden relative lg:block mx-auto max-w-screen-2xl py-6 px-3 sm:px-10">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 mx-auto">
-            <div className=" border-r border-gray-200 py-1 flex items-center justify-center bg-white">
-              <div className="mr-3">
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="flex-shrink-0 h-4 w-4 text-emerald-600"
-                  aria-hidden="true"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect x={1} y={3} width={15} height={13} />
-                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
-                  <circle cx="5.5" cy="18.5" r="2.5" />
-                  <circle cx="18.5" cy="18.5" r="2.5" />
-                </svg>
-              </div>
-              <div className="">
-                <span className="block  text-sm font-medium leading-5">
-                  Free Shipping From €500.00
-                </span>
-              </div>
-            </div>
-            <div className=" border-r border-gray-200 py-1 flex items-center justify-center bg-white">
-              <div className="mr-3">
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="flex-shrink-0 h-4 w-4 text-emerald-600"
-                  aria-hidden="true"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-              </div>
-              <div className="">
-                <span className="block  text-sm font-medium leading-5">
-                  Support 24/7 At Anytime
-                </span>
-              </div>
-            </div>
-            <div className=" border-r border-gray-200 py-1 flex items-center justify-center bg-white">
-              <div className="mr-3">
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="flex-shrink-0 h-4 w-4 text-emerald-600"
-                  aria-hidden="true"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect x={1} y={4} width={22} height={16} rx={2} ry={2} />
-                  <line x1={1} y1={10} x2={23} y2={10} />
-                </svg>
-              </div>
-              <div className="">
-                <span className="block  text-sm font-medium leading-5">
-                  Secure Payment Totally Safe
-                </span>
-              </div>
-            </div>
-            <div className=" border-r border-gray-200 py-1 flex items-center justify-center bg-white">
-              <div className="mr-3">
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="flex-shrink-0 h-4 w-4 text-emerald-600"
-                  aria-hidden="true"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <polyline points="20 12 20 22 4 22 4 12" />
-                  <rect x={2} y={7} width={20} height={5} />
-                  <line x1={12} y1={22} x2={12} y2={7} />
-                  <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
-                  <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
-                </svg>
-              </div>
-              <div className="">
-                <span className="block  text-sm font-medium leading-5">
-                  Latest Offer Upto 20% Off
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr className="hr-line" />
+      <footer className="w-full">
         <div className="border-t border-gray-100 w-full">
           <div className="pb-16 lg:pb-0 xl:pb-0 bg-white">
             <div className="mx-auto max-w-screen-2xl px-4 sm:px-10">
-              <div className="grid grid-cols-2 md:grid-cols-7 xl:grid-cols-12 gap-5 sm:gap-9 lg:gap-11 xl:gap-7 py-10 lg:py-16 justify-between">
-                <div className="pb-3.5 sm:pb-0 col-span-1 md:col-span-2 lg:col-span-3">
-                  <h3 className="text-md lg:leading-7 font-medium mb-4 sm:mb-5 lg:mb-6 pb-0.5">
-                    Company
-                  </h3>
-                  <ul className="text-sm flex flex-col space-y-3">
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/about-us"
-                      >
-                        About Us
-                      </a>
-                    </li>
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/contact-us"
-                      >
-                        Contact Us
-                      </a>
-                    </li>
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/#"
-                      >
-                        Careers
-                      </a>
-                    </li>
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/#"
-                      >
-                        Latest News
-                      </a>
-                    </li>
-                  </ul>
+              <div className="grid grid-cols-3 md:grid-cols-3 xl:grid-cols-3 gap-5 sm:gap-9 lg:gap-11 xl:gap-7 py-10 lg:py-16 justify-between">
+                <div className="pb-3.5 sm:pb-0 col-span-1">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: footer_content.footer_column_1 || "",
+                    }}
+                  />
                 </div>
-                <div className="pb-3.5 sm:pb-0 col-span-1 md:col-span-2 lg:col-span-3">
-                  <h3 className="text-md lg:leading-7 font-medium mb-4 sm:mb-5 lg:mb-6 pb-0.5">
-                    Latest News
-                  </h3>
-                  <ul className="text-sm lg:text-15px flex flex-col space-y-3">
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/search?category=fish-meat"
-                      >
-                        Fish &amp; Meat
-                      </a>
-                    </li>
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/search?category=drinks"
-                      >
-                        Soft Drink
-                      </a>
-                    </li>
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/search?category=milk-dairy"
-                      >
-                        Milk &amp; Dairy
-                      </a>
-                    </li>
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/search?category=beauty-health"
-                      >
-                        Beauty &amp; Health
-                      </a>
-                    </li>
-                  </ul>
+                <div className="pb-3.5 sm:pb-0 col-span-1">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: footer_content.footer_column_2 || "",
+                    }}
+                  />
                 </div>
-                <div className="pb-3.5 sm:pb-0 col-span-1 md:col-span-2 lg:col-span-3">
-                  <h3 className="text-md lg:leading-7 font-medium mb-4 sm:mb-5 lg:mb-6 pb-0.5">
-                    My Account
-                  </h3>
-                  <ul className="text-sm lg:text-15px flex flex-col space-y-3">
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/#"
-                      >
-                        Dashboard
-                      </a>
-                    </li>
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/#"
-                      >
-                        My Orders
-                      </a>
-                    </li>
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/#"
-                      >
-                        Recent Orders
-                      </a>
-                    </li>
-                    <li className="flex items-baseline">
-                      <a
-                        className="text-gray-600 inline-block w-full hover:text-emerald-500"
-                        href="/#"
-                      >
-                        Update Profile
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="pb-3.5 sm:pb-0 col-span-1 md:col-span-2 lg:col-span-3">
-                  <a
-                    className="mr-3 lg:mr-12 xl:mr-12"
-                    rel="noreferrer"
-                    href="/"
-                  >
-                    <div className="relative w-32 h-10">
-                      <img
-                        alt="logo"
-                        loading="lazy"
-                        width={0}
-                        height={0}
-                        decoding="async"
-                        data-nimg={1}
-                        className="w-full h-auto"
-                        src="https://res.cloudinary.com/ahossain/image/upload/v1697688576/settings/logo-color_el4zmy.svg"
-                        style={{ color: "transparent" }}
-                      />
-                    </div>
-                  </a>
-                  <p className="leading-7 font-sans text-sm text-gray-600 mt-3">
-                    Address
-                    <br />
-                    <span> Hotline : </span>
-                    <br />
-                    <span> Email : support@shopsanpham.vn</span>
-                  </p>
+                <div className="pb-3.5 sm:pb-0 col-span-1">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: footer_content.footer_column_3 || "",
+                    }}
+                  />
                 </div>
               </div>
               <hr className="hr-line" />
@@ -475,7 +156,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </footer>
     </Fragment>
   );
 };
