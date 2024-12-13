@@ -18,6 +18,7 @@ export type TProductItem = {
   shop_id: number;
   description: string;
   models: TProductModel[];
+  ref_link: string;
 };
 export type TCategoryItem = {
   id: number;

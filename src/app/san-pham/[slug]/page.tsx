@@ -3,17 +3,15 @@ import ProductImage from "@/components/productDetail/ProductImage";
 import { API_URL } from "@/configs/constant";
 import { extractProductSlug, formatMoney } from "@/utils/function";
 import { TProductItem, TShop } from "../../../../@types/common";
-import { Fragment } from "react";
-import StarRatings from "react-star-ratings";
-
 import SocialSharing from "@/components/SocialSharing";
 import ShopInfo from "@/components/shopInfo";
 import ProductRelated from "@/components/productRelated";
 import ProductContent from "@/components/productDetail/ProductContent";
-import IButton from "@/components/UI/Button";
+import { IButton } from "@/components/UI/Button";
 import ProductRating from "@/components/productDetail/ProductRating";
 import { Metadata } from "next";
 import ProductModel from "@/components/productDetail/ProductModel";
+import ProductButton from "@/components/productDetail/ProductButton";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -125,11 +123,7 @@ export default async function ProductPage({
                       </div>
                     </div>
                     <ProductModel models={product.models} />
-                    <div className="flex items-center mt-4 mb-4">
-                      <div className="flex items-center justify-between space-s-3 sm:space-s-4 w-full">
-                        <IButton label="Mua ngay" />
-                      </div>
-                    </div>
+                    <ProductButton ref_link={product.ref_link} />
                     <hr />
                     <SocialSharing />
                   </div>
