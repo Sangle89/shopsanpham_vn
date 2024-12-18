@@ -15,7 +15,7 @@ const Footer = ({ footer_content }: FooterProps) => {
         <div className="border-t border-gray-100 w-full">
           <div className="pb-16 lg:pb-0 xl:pb-0 bg-white">
             <div className="mx-auto max-w-screen-2xl px-4 sm:px-10">
-              <div className="grid grid-cols-3 md:grid-cols-3 xl:grid-cols-3 gap-5 sm:gap-9 lg:gap-11 xl:gap-7 py-10 lg:py-16 justify-between">
+              <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-5 sm:gap-9 lg:gap-11 xl:gap-7 py-10 lg:py-16 justify-between">
                 <div className="pb-3.5 sm:pb-0 col-span-1">
                   <div
                     dangerouslySetInnerHTML={{
