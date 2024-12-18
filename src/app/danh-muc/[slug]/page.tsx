@@ -62,7 +62,7 @@ export default async function CategoryPage({
               <div className="w-full xl:w-3/12 lg:w-3/12 md:w-3/12">
                 <SidebarCategory categories={categories} />
               </div>
-              <div className="w-9/12 xl:pl-6 md:pl-6 md:w-9/12 mob-w-full">
+              <div className="w-full lg:w-9/12 xl:pl-6 md:pl-6 md:w-9/12 mob-w-full">
                 <div className="flex justify-between mb-3 bg-orange-100 border border-gray-100 rounded p-3">
                   <h6 className="text-sm font-serif">
                     Có <span className="font-bold">{total}</span> sản phẩm
