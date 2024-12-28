@@ -45,3 +45,16 @@ export type TSeo = {
   top_content: string;
   bottom_content: string;
 };
+export type TPost = {
+  id: number;
+  title: string;
+  slug: string;
+  image: string;
+  short_content: string;
+  content: string;
+  content: string;
+};
+export type TBreadcrumb = {
+  name: string;
+  url: string;
+};
