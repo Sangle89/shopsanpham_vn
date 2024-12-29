@@ -1,14 +1,20 @@
+"use client";
 import { productImage } from "@/utils/function";
 import { TPost } from "../../../@types/common";
 import Image from "next/image";
+import { useState } from "react";
 export default function PostItem(props: TPost) {
+  const [imgSrc, setImgSrc] = useState(productImage(props.image));
   return (
     <div className="flex flex-row sm:block hover-img">
       <a href={`/blog/${props.slug}`}>
         <Image
           width={300}
           height={200}
-          src={productImage(props.image)}
+          src={imgSrc}
+          onError={() => {
+            setImgSrc("/no-image.png");
+          }}
           alt={props.title}
           className="object-contain transition duration-150 ease-linear transform group-hover:scale-105 p-2"
         />

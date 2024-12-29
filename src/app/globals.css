@@ -78,3 +78,12 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.blog-content p,
+.blog-content ul,
+.blog-content h4 {
+  margin-bottom: 15px;
+}
+.blog-content ul {
+  list-style: disc;
+  padding-left: 15px;
+}

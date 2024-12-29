@@ -1,6 +1,5 @@
 import { API_URL } from "@/configs/constant";
-import { TBreadcrumb, TPost } from "../../../@types/common";
-import PostItem from "@/components/PostItem";
+import { TPost } from "../../../../@types/common";
 
 async function fetchData(slug: string): Promise<{
   post: TPost;
@@ -17,16 +16,16 @@ export default async function BlogDetailPage({
 }) {
   const { post } = await fetchData((await params).slug);
   return (
-    <div className="mx-auto px-3 lg:px-10 max-w-screen-2xl">
-      <div className="w-full py-3">
-        <h1 className="text-gray-800 text-2xl font-bold">
-          <span className="inline-block h-5 border-l-3 border-red-600 mr-2"></span>
-          {post.title}
-        </h1>
+    <section className="py-5">
+      <div className="lg:w-[900px] m-auto">
+        <h1 className="text-gray-800 text-2xl font-bold mb-3">{post.title}</h1>
+        <div className="table-of-content">
+          <div dangerouslySetInnerHTML={{ __html: post.tag_heading }} />
+        </div>
+        <div className="blog-content">
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        </div>
       </div>
-      <div className="">
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
-      </div>
-    </div>
+    </section>
   );
 }

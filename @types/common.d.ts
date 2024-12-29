@@ -52,7 +52,7 @@ export type TPost = {
   image: string;
   short_content: string;
   content: string;
-  content: string;
+  tag_heading: string;
 };
 export type TBreadcrumb = {
   name: string;
