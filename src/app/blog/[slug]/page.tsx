@@ -1,5 +1,22 @@
 import { API_URL } from "@/configs/constant";
 import { TPost } from "../../../../@types/common";
+import { Metadata } from "next";
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const slug = (await params).slug;
+  const res = await fetch(API_URL + "/blog/" + slug);
+  const product = await res.json();
+
+  return {
+    title: product.title,
+    // openGraph: {
+    //   images: ['/some-specific-page-image.jpg', ...previousImages],
+    // },
+  };
+}
 
 async function fetchData(slug: string): Promise<{
   post: TPost;

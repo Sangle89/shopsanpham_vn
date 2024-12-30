@@ -13,7 +13,7 @@ export default function PostItem(props: TPost) {
           height={200}
           src={imgSrc}
           onError={() => {
-            setImgSrc("/no-image.png");
+            setImgSrc("/image-error.svg");
           }}
           alt={props.title}
           className="object-contain transition duration-150 ease-linear transform group-hover:scale-105 p-2"
