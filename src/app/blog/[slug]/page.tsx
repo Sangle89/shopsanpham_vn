@@ -8,13 +8,15 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = (await params).slug;
   const res = await fetch(API_URL + "/blog/" + slug);
-  const product = await res.json();
+  const { meta_data } = await res.json();
 
   return {
-    title: product.title,
-    // openGraph: {
-    //   images: ['/some-specific-page-image.jpg', ...previousImages],
-    // },
+    title: meta_data.title,
+    keywords: meta_data.keywords,
+    openGraph: {
+      title: meta_data.title,
+      description: meta_data.description,
+    },
   };
 }
 

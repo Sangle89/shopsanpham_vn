@@ -1,6 +1,24 @@
 import { API_URL } from "@/configs/constant";
 import { TBreadcrumb, TPost } from "../../../@types/common";
 import PostItem from "@/components/PostItem";
+import { Metadata } from "next";
+type Props = {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const res = await fetch(API_URL + "/blog");
+  const { meta_data } = await res.json();
+
+  return {
+    title: meta_data.title,
+    keywords: meta_data.keywords,
+    openGraph: {
+      title: meta_data.title,
+      description: meta_data.description,
+    },
+  };
+}
 
 async function fetchData(): Promise<{
   posts: { data: TPost[]; total: number };
